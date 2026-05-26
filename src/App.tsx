@@ -16,8 +16,12 @@ import CookieConsent from './components/CookieConsent';
 
 export default function App() {
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
-    const saved = localStorage.getItem('upnet_theme');
-    return saved === 'light' ? 'light' : 'dark'; // Dark is default for premium tech look
+    try {
+      const saved = localStorage.getItem('upnet_theme');
+      return saved === 'light' ? 'light' : 'dark'; // Dark is default for premium tech look
+    } catch (e) {
+      return 'dark'; // Safe fallback if localStorage is blocked in sandboxed iframes
+    }
   });
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,7 +35,11 @@ export default function App() {
   const [formSubmitting, setFormSubmitting] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem('upnet_theme', theme);
+    try {
+      localStorage.setItem('upnet_theme', theme);
+    } catch (e) {
+      // Ignore SecurityErrors in blocked local storage
+    }
     const root = window.document.documentElement;
     if (theme === 'dark') {
       root.classList.add('dark');

@@ -6,10 +6,18 @@ export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if user already accepted cookie settings
-    const accepted = localStorage.getItem('upnet_cookies_accepted');
-    if (!accepted) {
-      // Delay showing the banner for better UX (1.5 seconds)
+    try {
+      // Check if user already accepted cookie settings
+      const accepted = localStorage.getItem('upnet_cookies_accepted');
+      if (!accepted) {
+        // Delay showing the banner for better UX (1.5 seconds)
+        const timer = setTimeout(() => {
+          setIsVisible(true);
+        }, 1500);
+        return () => clearTimeout(timer);
+      }
+    } catch (e) {
+      // Safe fallback if localStorage is blocked: show cookies banner on every first-load without crashing
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, 1500);
@@ -18,7 +26,11 @@ export default function CookieConsent() {
   }, []);
 
   const handleAccept = () => {
-    localStorage.setItem('upnet_cookies_accepted', 'true');
+    try {
+      localStorage.setItem('upnet_cookies_accepted', 'true');
+    } catch (e) {
+      // Safe fallback if localStorage is blocked
+    }
     setIsVisible(false);
   };
 
