@@ -1,6 +1,9 @@
 import React from 'react';
 import { Calendar, Monitor, Award, Heart, Check, Users2, Shield } from 'lucide-react';
 import { motion } from 'motion/react';
+import suporteLocal from '../assets/images/suporte_local_novo_1779820359990.png';
+import tecnicoFibra from '../assets/images/tecnico_fibra_novo_1779820382981.png';
+import familiaConectada from '../assets/images/familia_conectada_upnet_1779817721954.png';
 
 interface AboutProps {
   theme: 'dark' | 'light';
@@ -173,7 +176,7 @@ export default function About({ theme }: AboutProps) {
             >
               <div className="overflow-hidden aspect-video relative">
                 <img 
-                  src="/src/assets/images/suporte_local_novo_1779820359990.png" 
+                  src={suporteLocal} 
                   alt="Atendimento presencial e acolhedor UPNet" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -210,7 +213,7 @@ export default function About({ theme }: AboutProps) {
             >
               <div className="overflow-hidden aspect-video relative">
                 <img 
-                  src="/src/assets/images/tecnico_fibra_novo_1779820382981.png" 
+                  src={tecnicoFibra} 
                   alt="Técnico da UPNet fazendo manutenção na rede local" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -247,8 +250,8 @@ export default function About({ theme }: AboutProps) {
             >
               <div className="overflow-hidden aspect-video relative">
                 <img 
-                  src="/src/assets/images/familia_conectada_upnet_1779817721954.png" 
-                  alt="Família feliz conectada com Wi-Fi de alta estabilidade" 
+                  src={familiaConectada} 
+                  alt="Família feliz conectada with Wi-Fi de alta estabilidade" 
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

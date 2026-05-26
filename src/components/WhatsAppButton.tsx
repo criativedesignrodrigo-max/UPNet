@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageSquareText, X } from 'lucide-react';
+import favicon from '../assets/images/favicon.png';
 
 export default function WhatsAppButton() {
   const [showNotification, setShowNotification] = useState(false);
@@ -47,7 +48,7 @@ export default function WhatsAppButton() {
             <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#0A73FE] to-blue-400 p-[1.5px] shrink-0 shadow-lg shadow-[#0A73FE]/15">
               <div className="w-full h-full rounded-[9px] bg-slate-900 flex items-center justify-center p-1">
                 <img 
-                  src="/src/assets/images/favicon.png" 
+                  src={favicon} 
                   alt="UPNet" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"

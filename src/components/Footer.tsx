@@ -11,6 +11,7 @@ import {
   ShieldAlert, 
   Settings 
 } from 'lucide-react';
+import logo from '../assets/images/logo.png';
 
 interface FooterProps {
   theme: 'dark' | 'light';
@@ -48,7 +49,7 @@ export default function Footer({ theme, scrollToSection }: FooterProps) {
           <div className="lg:col-span-4 space-y-5">
             <div className="flex items-center select-none">
               <img 
-                src="/src/assets/images/logo.png" 
+                src={logo} 
                 alt="UPNet Informática" 
                 className="h-11 w-auto object-contain transition-all duration-300" 
                 referrerPolicy="no-referrer" 

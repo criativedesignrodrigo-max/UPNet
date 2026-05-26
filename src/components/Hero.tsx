@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 import { Globe, ArrowRight, CheckCircle, Wifi, Gauge, Zap } from 'lucide-react';
+import familiaConectada from '../assets/images/familia_conectada_upnet_1779817721954.png';
 
 interface HeroProps {
   theme: 'dark' | 'light';
@@ -448,7 +449,7 @@ export default function Hero({ theme, openCoverageModal, scrollToPlans }: HeroPr
               }`}>
                 <div className="relative w-10 h-10 rounded-xl overflow-hidden shrink-0 border border-up-cyan/30">
                   <img 
-                    src="/src/assets/images/familia_conectada_upnet_1779817721954.png" 
+                    src={familiaConectada} 
                     alt="Família conectada UPNet" 
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover scale-110"

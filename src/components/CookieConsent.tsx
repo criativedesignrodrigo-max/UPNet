@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ShieldCheck, Cookie, X } from 'lucide-react';
+import favicon from '../assets/images/favicon.png';
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
@@ -49,7 +50,7 @@ export default function CookieConsent() {
             {/* Visual Icon Badge - Favicon based */}
             <div className="p-2.5 bg-[#0A73FE]/10 border border-[#0A73FE]/20 rounded-xl shrink-0 flex items-center justify-center">
               <img 
-                src="/src/assets/images/favicon.png" 
+                src={favicon} 
                 alt="UPNet" 
                 className="w-8 h-8 object-contain"
                 referrerPolicy="no-referrer"

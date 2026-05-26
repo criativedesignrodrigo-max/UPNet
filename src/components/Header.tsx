@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe, Phone, User, Gauge, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import logo from '../assets/images/logo.png';
 
 interface HeaderProps {
   theme: 'dark' | 'light';
@@ -78,7 +79,7 @@ export default function Header({ theme, setTheme, openCoverageModal }: HeaderPro
           {/* Custom brand logo image */}
           <div className="flex items-center cursor-pointer select-none" onClick={() => handleNavClick('#inicio')}>
             <img 
-              src="/src/assets/images/logo.png" 
+              src={logo} 
               alt="UPNet Informática" 
               className="h-12 md:h-14 w-auto object-contain transition-all duration-300" 
               referrerPolicy="no-referrer" 
