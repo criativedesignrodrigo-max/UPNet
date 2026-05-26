@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-up-deep: #082C5C;
+  --color-up-blue: #0D6EFD;
+  --color-up-cyan: #11C5FF;
+  --color-up-ice: #F5F9FF;
+  --color-up-dark: #0f172a;
+  --color-up-darker: #020617;
+  --color-up-gray: #334155;
+}
+
+@layer utilities {
+  /* Dynamic Glassmorphism styles */
+  .glass-dark {
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-light {
+    background: rgba(245, 249, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(8, 44, 92, 0.06);
+  }
+
+  .glass-blue {
+    background: rgba(13, 110, 253, 0.06);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(13, 110, 253, 0.15);
+  }
+
+  /* Neon Glowing Borders and shadows */
+  .glow-cyan {
+    box-shadow: 0 0 40px -5px rgba(17, 197, 255, 0.25);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 40px -5px rgba(13, 110, 253, 0.25);
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 10px rgba(17, 197, 255, 0.5);
+  }
+
+  .text-glow-blue {
+    text-shadow: 0 0 10px rgba(13, 110, 253, 0.5);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #020617;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #0d6efd;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Cybernetic moving background elements */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.15) translateY(-20px);
+  }
+}
+
+.cyber-glow {
+  animation: pulseGlow 8s ease-in-out infinite;
+}
+
+/* Text linear gradients standard */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #11C5FF 0%, #0D6EFD 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #FFB800 0%, #FF6B00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

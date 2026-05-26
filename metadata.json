@@ -1,0 +1,6 @@
+{
+  "name": "UPNet Informática",
+  "description": "Provedor premium de internet fibra óptica e soluções de tecnologia em Aparecida d'Oeste-SP e região desde 2011.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
